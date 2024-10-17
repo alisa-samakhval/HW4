@@ -1,5 +1,5 @@
 /*
- * *** YOUR NAME GOES HERE / YOUR SECTION NUMBER ***
+ * *** Alisa Samakhval / COMP 272 001 ***
  *
  * This HashingProblems object contains three methods / problems that you must
  * complete utilize the HashMap object within the Java's Collection Framework Library.
@@ -32,7 +32,26 @@ class HashingProblems {
      */
 
     public double getAverage(HashMap<Integer, Integer> map, int[] array) {
+        int sum = 0;
+        int count = 0;
 
+        for ( int i = 0; i < array.length; i++){
+            if (map.containsKey(array[i])) {
+
+                        sum = sum + map.get(array[i]);
+                        count++;
+
+                }
+            }
+
+
+        if (count > 0) {
+
+            double average = (double) sum / count;
+
+            // Round the result to one decimal place and return
+            return Math.round(average * 10.0) / 10.0;
+        }
         /*
          * ADD YOUR CODE HERE - DO NOT FORGET TO ADD YOU NAME AT TOP OF FILE
          *
@@ -56,12 +75,12 @@ class HashingProblems {
     
       ArrayList<String> result = new ArrayList<>();
 
-      /*
-       * ADD YOUR CODE HERE
-       *
-       * Hint: Consider iterating over the HashMap using the keySet method.
-       */
+      for (Integer key : map.keySet() ){
+          if (key%2!=0){
+              result.add(map.get(key));
+          }
 
+      }
 
       return result;
   }
@@ -106,11 +125,20 @@ class HashingProblems {
 
   public int twoSums(int[] numbers, int k) {
 
-      /*
-       * ADD YOUR CODE HERE
-       */
+      Set<Integer> Set = new HashSet<>();
+      int count = 0;
+      for (int element : numbers) {
+          Set.add(element);
+      }
+      for (int element : numbers) {
+          // Check if the pair (element + k) exists in the set
+          if (Set.contains(element + k)) {
+              count++;
+          }
+      }
 
-      return -1;
+
+      return count;
   }
 
 } /* end class HashingProblems */
