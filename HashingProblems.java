@@ -52,13 +52,7 @@ class HashingProblems {
             // Round the result to one decimal place and return
             return Math.round(average * 10.0) / 10.0;
         }
-        /*
-         * ADD YOUR CODE HERE - DO NOT FORGET TO ADD YOU NAME AT TOP OF FILE
-         *
-         * Note: if NO values found in common between the HashMap and supplied array,
-         * returning 0.0 is NOT correct, as that is not the average value. Whereas
-         * returning 0.0/0.0 IS correct (which would return a non-number).
-         */
+
 
          return 0.0 / 0.0;
   }
@@ -131,7 +125,7 @@ class HashingProblems {
           Set.add(element);
       }
       for (int element : numbers) {
-          // Check if the pair (element + k) exists in the set
+          //if el+k in the set
           if (Set.contains(element + k)) {
               count++;
           }
